@@ -1,0 +1,44 @@
+body {
+    font-family: "Source Sans 3", sans-serif;
+}
+
+nav.theme-dark, nav.theme-dark ul.links-wrapper.active { background-color: #0f172a }
+
+header.theme-dark { background-color: var(--teal-800) }
+
+  header.theme-dark .badge {
+    color: #000;
+    background-color: #F5F5DC;
+}
+
+
+header.theme-dark  h1 { color: #F5F5DC; }
+
+section.theme-dark   { background-color: #0f172a }
+
+.theme-dark h1, .theme-dark h2, .theme-dark h3 {
+    color: #F5F5DC;
+}
+
+.theme-dark a:not(.btn):link, .theme-dark a:not(.btn):visited {
+    color: #F5F5DC;
+}
+
+footer.theme-dark   { background-color: var(--teal-800) }
+
+footer.theme-dark ul.footer-links li a:link, footer.theme-dark ul.footer-links li a:visited {
+    color: #F5F5DC;
+    text-decoration-color: #F5F5DC;
+}
+
+footer.theme-dark ul.footer-icons li a:link i, footer.theme-dark ul.footer-icons li a:visited i {
+    color:#F5F5DC;
+}
+
+header .col-text h2, .col-1 > h3 { line-height: 1.8 }
+
+
+
+
+
+
