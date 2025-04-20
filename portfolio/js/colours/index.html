@@ -119,25 +119,38 @@
 
     <script>
 
-        const arrHex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
-        const btnColor = document.querySelector("#btn-color");
-        const strColorDisplay = document.querySelector("#color-display");
+    // Define an array of hexadecimal characters (0-9, A-F) for color generation.
+    const arrHex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+    
+    // Select the button element with the id 'btn-color'.
+    const btnColor = document.querySelector("#btn-color");
+    
+    // Select the element where the generated color will be displayed.
+    const strColorDisplay = document.querySelector("#color-display");
 
-        btnColor.addEventListener("click", function () {
-        let strHexColor = "#";
+    // Add an event listener to the button that triggers the color change when clicked.
+    btnColor.addEventListener("click", function () {
+        let strHexColor = "#"; // Start the hex color string with a "#" symbol.
+        
+        // Loop to generate a 6-character hexadecimal color code.
         for (let i = 0; i < 6; i++) {
+            // Append a random hex value (from arrHex) to the color string.
             strHexColor = strHexColor + arrHex[getRandomNumber()];
         }
+        
+        // Display the generated hex color code inside the strColorDisplay element.
         strColorDisplay.textContent = strHexColor;
+        
+        // Change the background color of the element with class 'theme-js' to the generated color.
         document.querySelector(".theme-js").style.backgroundColor = strHexColor;
-        });
+    });
 
-        // Generate random number in range 0 - 15
-        function getRandomNumber() {
-        return Math.floor(Math.random() * arrHex.length);
-        }
+    // Function to generate a random number between 0 and 15 (inclusive) to index the arrHex array.
+    function getRandomNumber() {
+        return Math.floor(Math.random() * arrHex.length); // Generate a random number and return it.
+    }
 
-    </script>
+</script>
 
 
     <!-- footer -->
