@@ -166,10 +166,11 @@
 
                 //Hide the tip amount on load
         document.getElementById("tipDisplayBox").style.display = "none";
-        document.getElementById("numOfPeople").value = 1;
+        document.getElementById("numOfPeople").value = 1; // Default number of people is set to 1
 
         // Calculate tip
         function calculateTip() {
+             // Retrieve values from input fields
         let billAmount = document.getElementById("billAmount").value;
         let serviceQuality = document.getElementById("serviceQuality").value;
         let numOfPeople = document.getElementById("numOfPeople").value;
@@ -177,7 +178,7 @@
         // Validate input
             if (billAmount === "" || serviceQuality == 0) {
             alert("Please enter values");
-            return;
+            return; // Exit function if inputs are invalid
         }
 
         // Calculate tip
@@ -200,7 +201,6 @@
 
         // click to call function
         document.getElementById("calculate").onclick = () => calculateTip();
-
 
     </script>
 
