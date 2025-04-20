@@ -129,39 +129,48 @@
     </main>
 
     <script>
-                // set inital value to zero
-        let count = 0;
-        // select value and buttons
-        const value = document.querySelector("#value");
-        const btns = document.querySelectorAll(".btn");
+    // set initial value to zero
+    let count = 0;
+    
+    // select value and buttons
+    const value = document.querySelector("#value");  // Selects the element where the count is displayed
+    const btns = document.querySelectorAll(".btn");  // Selects all buttons with class 'btn'
 
-        btns.forEach(function (btn) {
+    // Loop through each button
+    btns.forEach(function (btn) {
+        // Add click event listener to each button
         btn.addEventListener("click", function (e) {
-            const styles = e.currentTarget.classList;
+            const styles = e.currentTarget.classList;  // Get the classes of the clicked button
+            
+            // Check if the clicked button has the class "decrease"
             if (styles.contains("decrease")) {
-                count--;
+                count--;  // Decrease the count
             }
+            // Check if the clicked button has the class "increase"
             else if (styles.contains("increase")) {
-                count++;
+                count++;  // Increase the count
             }
             else {
-                count = 0;
+                count = 0;  // Reset count to 0 if neither increase nor decrease is clicked
             }
 
+            // Change color of the count display based on the value of count
             if (count > 0) {
-                value.style.color = "green";
+                value.style.color = "green";  // Set color to green if count is positive
             }
             if (count < 0) {
-                value.style.color = "red";
+                value.style.color = "red";  // Set color to red if count is negative
             }
             if (count === 0) {
-                value.style.color = "#222";
+                value.style.color = "#222";  // Set color to default if count is zero
             }
+
+            // Update the displayed value with the current count
             value.textContent = count;
         });
-        });
+    });
+</script>
 
-    </script>
 
 
     <!-- footer -->
