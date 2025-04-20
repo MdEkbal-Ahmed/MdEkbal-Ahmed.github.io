@@ -8,28 +8,27 @@ if (document.readyState === "loading") {
 
     capitalize = s => s && s[0].toUpperCase() + s.slice(1)
 
-    async function populateTableRows() { 
-        await fetch('https://api.openweathermap.org/data/2.5/weather?q=dhaka, bd&units=metric&APPID=bc425ac2188d406c884f4fdd88b339f0')
+     async function populateTableRows() { 
+        await fetch('https://api.openweathermap.org/data/2.5/weather?q=dhaka,bd&units=metric&APPID=bc425ac2188d406c884f4fdd88b339f0')
+        // Fetch the weather data from OpenWeatherMap API for Dhaka, Bangladesh.
     
           .then(response => {
+            // Check if the API response status is not OK (i.e., status code is not 200).
+
             if (response.status !== 200) {
               console.log('Error Status Code: ' + response.status);
-              return;
+              return; // Exit the function if there is an error.
           }
+
+          // If response status is OK, convert the response to JSON and process the data.
           response.json().then((data) => {	
             // Test if data is being received
             console.log(data);
+
+             // Create table rows to display the weather information.
             let strTableRows = `<tr>
             <td><span>Summary</span></td>
             <td>${capitalize(data["weather"][0]["description"])}</td>
-        </tr>
-                    <tr>
-            <td><span>Temperature</span></td>
-            <td>${data["main"]["temp"] + "°C"}</td>
-        </tr>
-                    <tr>
-            <td><span>Humidity</span></td>
-            <td>${data["main"]["humidity"] + " %"}</td>
         </tr>
             <tr>
             <td><span>Pressure</span></td>
